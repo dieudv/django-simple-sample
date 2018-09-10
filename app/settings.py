@@ -25,12 +25,17 @@ SECRET_KEY = 'hbwep56_dvj3m(i+g#+f+@#1$9&*iw0supusvn3ujb3(6s7833'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '0.0.0.0',
+    'localhost',
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'app.apps.appConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,10 +82,17 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'djongo',
+#         'NAME': 'staredit',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation
