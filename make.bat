@@ -42,7 +42,7 @@ if defined _USERADD_ (
 )
 
 if defined _RUN_ (
-    call python manage.py runserver 127.0.0.1:8082
+    call python manage.py runserver 127.0.0.1:8080
 )
 
 call deactivate

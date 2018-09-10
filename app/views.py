@@ -1,5 +1,14 @@
 from django.shortcuts import render
+from django.template.exceptions import TemplateDoesNotExist
 
-# Create your views here.
-def index(request):
-    return render(request, 'index.html')
+def index(request, path=None):
+    if path:
+        try:
+            return render(request, '{}.html'.format(path))
+        except TemplateDoesNotExist:
+            try:
+                return render(request, '{}/index.html'.format(path))
+            except TemplateDoesNotExist:
+                return render(request, '404.html')
+    else:
+        return render(request, 'index.html')

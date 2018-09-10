@@ -1,9 +1,7 @@
 {% extends "base.html" %}
-{% load static %}
-
 {% block title %}Đây là title{% endblock %}
 
 {% block content %}
     <h1>Đây là content</h1>
-    <img src="{% static 'images/dino.jpg' %}" alt="My image"/>
+    <img src="/static/images/dino.jpg" alt="My image"/>
 {% endblock %}
